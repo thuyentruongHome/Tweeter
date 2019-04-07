@@ -55,13 +55,69 @@
 			isa = PBXGroup;
 			children = (
 				E25A2ADE225ABD84006D847E /* AppDelegate.swift */,
-				E25A2AE0225ABD84006D847E /* ViewController.swift */,
-				E25A2AE2225ABD84006D847E /* Main.storyboard */,
-				E25A2AE5225ABD85006D847E /* Assets.xcassets */,
-				E25A2AE7225ABD85006D847E /* LaunchScreen.storyboard */,
+				E25A2AF4225ABEF3006D847E /* Controllers */,
+				E25A2AF3225ABEEF006D847E /* Models */,
+				E25A2AF2225ABEEC006D847E /* Views */,
+				E25A2AF1225ABEE9006D847E /* Extensions */,
+				E25A2AF0225ABEE7006D847E /* Helpers */,
+				E25A2AF5225ABF0B006D847E /* Supporting Files */,
+				E25A2AF6225ABF12006D847E /* Secrets */,
 				E25A2AEA225ABD85006D847E /* Info.plist */,
 			);
 			path = Tweeter;
+			sourceTree = "<group>";
+		};
+		E25A2AF0225ABEE7006D847E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E25A2AF1225ABEE9006D847E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E25A2AF2225ABEEC006D847E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E25A2AE7225ABD85006D847E /* LaunchScreen.storyboard */,
+				E25A2AE2225ABD84006D847E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E25A2AF3225ABEEF006D847E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E25A2AF4225ABEF3006D847E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E25A2AE0225ABD84006D847E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E25A2AF5225ABF0B006D847E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E25A2AE5225ABD85006D847E /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E25A2AF6225ABF12006D847E /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
