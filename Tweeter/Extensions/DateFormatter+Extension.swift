@@ -11,7 +11,7 @@ import Foundation
 extension DateFormatter {
   static var firebaseDate: DateFormatter = {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
     return dateFormatter
   }()
 }

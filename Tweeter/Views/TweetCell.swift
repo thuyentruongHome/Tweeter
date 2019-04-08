@@ -26,6 +26,7 @@ class TweetCell: UITableViewCell {
     guard let tweet = tweet else { return }
     let user = tweet.user
     displayName.text = user.displayName()
+    tweetCreatedAt.text = tweet.createdAt.timeAgoInWords()
     tweetMessage.text = tweet.message
     tweetUserImage.image = user.avatarImage()
   }
