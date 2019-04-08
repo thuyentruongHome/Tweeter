@@ -1,19 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TweetsViewController" customModule="Tweeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oht-kw-Q4p" userLabel="Main View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwC-5B-txT" userLabel="Menu Bar">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tweeter-symbol" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-FI-hXQ">
+                                                <rect key="frame" x="10" y="0.0" width="60" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="ABk-6O-Y1f"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-cc-MjN">
+                                                <rect key="frame" x="100" y="0.0" width="304" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's your voice be heard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94J-v1-2x2">
+                                                        <rect key="frame" x="0.0" y="50.5" width="232" height="34.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="25"/>
+                                                        <color key="textColor" red="0.2666666667" green="0.30588235289999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweeter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBQ-Sm-6eS">
+                                                        <rect key="frame" x="0.0" y="15" width="66.5" height="32"/>
+                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="94J-v1-2x2" secondAttribute="trailing" constant="20" symbolic="YES" id="1WO-lN-KhT"/>
+                                                    <constraint firstItem="fBQ-Sm-6eS" firstAttribute="leading" secondItem="sGA-cc-MjN" secondAttribute="leading" id="556-YA-4KG"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fBQ-Sm-6eS" secondAttribute="trailing" constant="20" symbolic="YES" id="70V-Xm-JZH"/>
+                                                    <constraint firstItem="fBQ-Sm-6eS" firstAttribute="top" secondItem="sGA-cc-MjN" secondAttribute="top" constant="15" id="Jgn-Co-XpS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="94J-v1-2x2" secondAttribute="bottom" constant="15" id="P0R-ee-eHj"/>
+                                                    <constraint firstItem="94J-v1-2x2" firstAttribute="leading" secondItem="sGA-cc-MjN" secondAttribute="leading" id="cA2-gh-H7S"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.3203125" green="0.71398758559999997" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="sGA-cc-MjN" secondAttribute="bottom" id="CAt-6x-FWN"/>
+                                            <constraint firstItem="sGA-cc-MjN" firstAttribute="top" secondItem="rwC-5B-txT" secondAttribute="top" id="DDH-eM-nEd"/>
+                                            <constraint firstAttribute="trailing" secondItem="sGA-cc-MjN" secondAttribute="trailing" constant="10" id="JA7-AQ-Hqz"/>
+                                            <constraint firstItem="xfx-FI-hXQ" firstAttribute="leading" secondItem="rwC-5B-txT" secondAttribute="leading" constant="10" id="RjC-rd-4K0"/>
+                                            <constraint firstItem="sGA-cc-MjN" firstAttribute="leading" secondItem="xfx-FI-hXQ" secondAttribute="trailing" constant="30" id="lfv-7l-0Cv"/>
+                                            <constraint firstAttribute="bottom" secondItem="xfx-FI-hXQ" secondAttribute="bottom" id="onU-6M-4MF"/>
+                                            <constraint firstItem="xfx-FI-hXQ" firstAttribute="top" secondItem="rwC-5B-txT" secondAttribute="top" id="qWi-MY-Qf1"/>
+                                            <constraint firstAttribute="height" constant="100" id="zSd-q7-0wk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0I-UO-EBW" userLabel="Tweets Box">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="718"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rwC-5B-txT" firstAttribute="leading" secondItem="oht-kw-Q4p" secondAttribute="leading" id="GKs-nT-rIU"/>
+                                    <constraint firstItem="i0I-UO-EBW" firstAttribute="top" secondItem="rwC-5B-txT" secondAttribute="bottom" id="M6h-Nk-Di0"/>
+                                    <constraint firstAttribute="trailing" secondItem="i0I-UO-EBW" secondAttribute="trailing" id="VH5-6S-sU8"/>
+                                    <constraint firstItem="rwC-5B-txT" firstAttribute="top" secondItem="oht-kw-Q4p" secondAttribute="top" id="XyK-9h-Aeb"/>
+                                    <constraint firstAttribute="bottom" secondItem="i0I-UO-EBW" secondAttribute="bottom" id="eHO-sm-HgT"/>
+                                    <constraint firstItem="i0I-UO-EBW" firstAttribute="leading" secondItem="oht-kw-Q4p" secondAttribute="leading" id="hZ3-1B-PIT"/>
+                                    <constraint firstAttribute="trailing" secondItem="rwC-5B-txT" secondAttribute="trailing" id="qbA-bc-dJL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oht-kw-Q4p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b9U-66-UDU"/>
+                            <constraint firstItem="oht-kw-Q4p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kAW-Rw-MW5"/>
+                            <constraint firstItem="oht-kw-Q4p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mSy-V6-IF8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oht-kw-Q4p" secondAttribute="bottom" id="nRh-b4-Kap"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -21,4 +100,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="tweeter-symbol" width="80" height="80"/>
+    </resources>
 </document>
