@@ -36,6 +36,7 @@ extension TweetsViewController: UITableViewDataSource {
   }
 }
 
+// MARK: - Setup Data
 extension TweetsViewController {
   // Load Tweets data from server
   fileprivate func loadTweets() {
