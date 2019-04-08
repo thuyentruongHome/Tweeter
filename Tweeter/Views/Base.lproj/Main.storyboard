@@ -73,7 +73,7 @@
                                         <rect key="frame" x="0.0" y="100" width="414" height="718"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ykp-Md-aCx">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="658"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <view key="tableFooterView" contentMode="scaleToFill" id="BH4-0t-GyK">
                                                     <rect key="frame" x="0.0" y="240" width="414" height="1"/>
@@ -159,12 +159,33 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uwl-yi-3no"/>
                                                 </connections>
                                             </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2G4-RB-s4K" userLabel="Add Tweet View">
+                                                <rect key="frame" x="0.0" y="658" width="414" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWg-Dr-L0K">
+                                                        <rect key="frame" x="183" y="6" width="48" height="48"/>
+                                                        <state key="normal" image="add"/>
+                                                        <connections>
+                                                            <segue destination="4h0-3D-Xv4" kind="presentation" id="B1R-T6-6V9"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="FZz-OA-dD5"/>
+                                                    <constraint firstItem="OWg-Dr-L0K" firstAttribute="centerY" secondItem="2G4-RB-s4K" secondAttribute="centerY" id="Rpv-sx-JCK"/>
+                                                    <constraint firstItem="OWg-Dr-L0K" firstAttribute="centerX" secondItem="2G4-RB-s4K" secondAttribute="centerX" id="WHH-Da-AY1"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="2G4-RB-s4K" firstAttribute="leading" secondItem="i0I-UO-EBW" secondAttribute="leading" id="0eV-x9-z2z"/>
                                             <constraint firstItem="Ykp-Md-aCx" firstAttribute="leading" secondItem="i0I-UO-EBW" secondAttribute="leading" id="CDz-g4-u1e"/>
+                                            <constraint firstAttribute="bottom" secondItem="2G4-RB-s4K" secondAttribute="bottom" id="PZ0-uz-BvE"/>
                                             <constraint firstAttribute="trailing" secondItem="Ykp-Md-aCx" secondAttribute="trailing" id="Wm4-b2-JyZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ykp-Md-aCx" secondAttribute="bottom" id="hIG-Fd-sgX"/>
+                                            <constraint firstItem="2G4-RB-s4K" firstAttribute="top" secondItem="Ykp-Md-aCx" secondAttribute="bottom" id="dpS-RA-Sle"/>
+                                            <constraint firstAttribute="trailing" secondItem="2G4-RB-s4K" secondAttribute="trailing" id="kZ0-9b-188"/>
                                             <constraint firstItem="Ykp-Md-aCx" firstAttribute="top" secondItem="i0I-UO-EBW" secondAttribute="top" id="uZX-Jd-qi0"/>
                                         </constraints>
                                     </view>
@@ -197,8 +218,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Create Tweet View Controller-->
+        <scene sceneID="68w-zp-luf">
+            <objects>
+                <viewController id="4h0-3D-Xv4" customClass="CreateTweetViewController" customModule="Tweeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kqn-FF-h4P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4Hf-CP-aar"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5x-1z-aFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="51"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="add" width="48" height="48"/>
         <image name="tweeter-symbol" width="80" height="80"/>
     </resources>
 </document>
