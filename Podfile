@@ -8,4 +8,11 @@ target 'Tweeter' do
   # Pods for Tweeter
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+
+  abstract_target 'Tests' do
+    target "TweeterTests"
+
+    pod 'Quick'
+    pod 'Nimble'
+  end
 end
