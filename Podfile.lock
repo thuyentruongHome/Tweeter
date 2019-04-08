@@ -5,6 +5,7 @@ PODS:
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
+  - Fakery (3.4.0)
   - Firebase/Core (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.4.0)
@@ -90,11 +91,12 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - Nimble (7.3.2)
+  - Nimble (8.0.1)
   - Protobuf (3.6.1)
-  - Quick (1.3.2)
+  - Quick (2.0.0)
 
 DEPENDENCIES:
+  - Fakery
   - Firebase/Core
   - Firebase/Firestore
   - Nimble
@@ -103,6 +105,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BoringSSL
+    - Fakery
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuthInterop
@@ -121,6 +124,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
+  Fakery: 885e894a3e7c392e1da96c6e46a1abe5a0b28686
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -133,10 +137,10 @@ SPEC CHECKSUMS:
   gRPC-Core: f4836515817c0eb479aeeb9cc27c91c4ba62a9f6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  Nimble: 5e94a8cacb355943c6c87198035dc4adbb0f10e4
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
 
-PODFILE CHECKSUM: f456048b702db254c172d5ff5c7b2402ff180500
+PODFILE CHECKSUM: e475519a2aa78043da73c4c48eabd3e7e79e67e7
 
 COCOAPODS: 1.5.3

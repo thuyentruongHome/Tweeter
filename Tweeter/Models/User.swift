@@ -6,10 +6,23 @@
 //  Copyright © 2019 thuyentruong. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct User: Decodable {
-  let username: String
-  let usertag: String
-  let userAvatarUrl: String
+  let name: String
+  var username: String
+  let userAvatarUrl: String?
+
+  // For Sample purpose, replace when implemening authentication
+  static let current: User = {
+    return User(name: "Abigail", username: "abigail.io", userAvatarUrl: nil)
+  }()
+
+  func displayName() -> String {
+    return "\(name) • @\(username)"
+  }
+
+  func avatarImage() -> UIImage {
+    return UIImage(named: username.lowercased()) ?? UIImage(named: Constant.User.defaultAvatar)!
+  }
 }

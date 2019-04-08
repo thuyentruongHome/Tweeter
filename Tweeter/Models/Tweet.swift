@@ -9,11 +9,13 @@
 import Foundation
 
 struct Tweet: Decodable {
-  let message: String
-  let user: User
-  let createdAt: Date
+  var tweetId: String?
+  var message: String
+  var user: User
+  var createdAt: Date
 
   private enum CodingKeys: String, CodingKey {
+    case tweetId = "tweet_id"
     case message, user
     case createdAt = "created_at"
   }

@@ -14,5 +14,6 @@ target 'Tweeter' do
 
     pod 'Quick'
     pod 'Nimble'
+    pod 'Fakery'
   end
 end
