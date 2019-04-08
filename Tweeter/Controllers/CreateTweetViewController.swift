@@ -25,12 +25,32 @@ class CreateTweetViewController: UIViewController {
     loadData()
   }
 
+  // MARK: - Handlers
+  @IBAction func cancelCreateTweet(_ sender: UIButton) {
+    tweetMessageInput.resignFirstResponder()
+    dismiss(animated: true, completion: nil)
+  }
+
+  @IBAction func sendTweet(_ sender: UIButton) {
+    tweetMessageInput.resignFirstResponder()
+    // TODO: create Tweet
+    dismiss(animated: true, completion: nil)
+  }
+
   // MARK: - Setup Data
   private func loadData() {
     userAvatar.image = User.current.avatarImage()
   }
 }
 
+// MARK: - UITextViewDelegate
+extension CreateTweetViewController: UITextViewDelegate {
+  func textViewDidChange(_ textView: UITextView) {
+    sendBtn.isEnabled = textView.text != ""
+  }
+}
+
+// MARK: - Register/Remove Notifications
 extension CreateTweetViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)

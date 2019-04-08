@@ -33,6 +33,7 @@
 		E25B9BB6225B434900E4BE8D /* Date+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BB5225B434900E4BE8D /* Date+ExtensionSpec.swift */; };
 		E25B9BB8225B600500E4BE8D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BB7225B600500E4BE8D /* String+Extension.swift */; };
 		E25B9BBA225B7B1200E4BE8D /* CreateTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BB9225B7B1200E4BE8D /* CreateTweetViewController.swift */; };
+		E25B9BBC225B98F800E4BE8D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BBB225B98F800E4BE8D /* UIButton+Extension.swift */; };
 		ECE60557555DC11E55022DEB /* Pods_Tweeter_Tests_TweeterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3699B6F1A36FE7FDA75531 /* Pods_Tweeter_Tests_TweeterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		E25B9BB5225B434900E4BE8D /* Date+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		E25B9BB7225B600500E4BE8D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E25B9BB9225B7B1200E4BE8D /* CreateTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetViewController.swift; sourceTree = "<group>"; };
+		E25B9BBB225B98F800E4BE8D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		EC8A041EF00C22E9967384F1 /* Pods-Tweeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 				E25A2B08225AE2F7006D847E /* Date+Extension.swift */,
 				E25B9BB7225B600500E4BE8D /* String+Extension.swift */,
 				E25A2B0A225AE5AA006D847E /* UIViewController+Extension.swift */,
+				E25B9BBB225B98F800E4BE8D /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				E25A2B0F225AEF3A006D847E /* DateFormatter+Extension.swift in Sources */,
 				E25A2B0B225AE5AA006D847E /* UIViewController+Extension.swift in Sources */,
 				E25A2AE1225ABD84006D847E /* TweetsViewController.swift in Sources */,
+				E25B9BBC225B98F800E4BE8D /* UIButton+Extension.swift in Sources */,
 				E25A2ADF225ABD84006D847E /* AppDelegate.swift in Sources */,
 				E25A2AFC225AD8D2006D847E /* User.swift in Sources */,
 				E25A2B07225AE2D4006D847E /* Snapshot+Extension.swift in Sources */,
