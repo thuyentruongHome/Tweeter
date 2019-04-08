@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BE2138D1FAB3816323FD516 /* Pods_Tweeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E28E42E4E73F91D1C8E5923 /* Pods_Tweeter.framework */; };
 		E25A2ADF225ABD84006D847E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2ADE225ABD84006D847E /* AppDelegate.swift */; };
 		E25A2AE1225ABD84006D847E /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2AE0225ABD84006D847E /* TweetsViewController.swift */; };
 		E25A2AE4225ABD84006D847E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A2AE2225ABD84006D847E /* Main.storyboard */; };
@@ -15,9 +16,12 @@
 		E25A2AF8225AD83F006D847E /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2AF7225AD83F006D847E /* TweetCell.swift */; };
 		E25A2AFA225AD8CC006D847E /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2AF9225AD8CC006D847E /* Tweet.swift */; };
 		E25A2AFC225AD8D2006D847E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2AFB225AD8D2006D847E /* User.swift */; };
+		E25A2AFE225ADD70006D847E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E25A2AFD225ADD70006D847E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E28E42E4E73F91D1C8E5923 /* Pods_Tweeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE12E4ABC3E8D6BFF03E5970 /* Pods-Tweeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweeter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter.debug.xcconfig"; sourceTree = "<group>"; };
 		E25A2ADB225ABD84006D847E /* Tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25A2ADE225ABD84006D847E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25A2AE0225ABD84006D847E /* TweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 		E25A2AF7225AD83F006D847E /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		E25A2AF9225AD8CC006D847E /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		E25A2AFB225AD8D2006D847E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E25A2AFD225ADD70006D847E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EC8A041EF00C22E9967384F1 /* Pods-Tweeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE2138D1FAB3816323FD516 /* Pods_Tweeter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31188D55CCC8595F860F4C9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E28E42E4E73F91D1C8E5923 /* Pods_Tweeter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9EBB7D42577C1CB7D13D24A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE12E4ABC3E8D6BFF03E5970 /* Pods-Tweeter.debug.xcconfig */,
+				EC8A041EF00C22E9967384F1 /* Pods-Tweeter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E25A2AD2225ABD84006D847E = {
 			isa = PBXGroup;
 			children = (
 				E25A2ADD225ABD84006D847E /* Tweeter */,
 				E25A2ADC225ABD84006D847E /* Products */,
+				9EBB7D42577C1CB7D13D24A3 /* Pods */,
+				31188D55CCC8595F860F4C9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +151,7 @@
 		E25A2AF6225ABF12006D847E /* Secrets */ = {
 			isa = PBXGroup;
 			children = (
+				E25A2AFD225ADD70006D847E /* GoogleService-Info.plist */,
 			);
 			path = Secrets;
 			sourceTree = "<group>";
@@ -136,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E25A2AED225ABD85006D847E /* Build configuration list for PBXNativeTarget "Tweeter" */;
 			buildPhases = (
+				37992E55B7CD8601EE71E76F /* [CP] Check Pods Manifest.lock */,
 				E25A2AD7225ABD84006D847E /* Sources */,
 				E25A2AD8225ABD84006D847E /* Frameworks */,
 				E25A2AD9225ABD84006D847E /* Resources */,
+				95B5606FFB90F7DF86F0B8FB /* [CP] Embed Pods Frameworks */,
+				67CB138E9103FE1602803FCD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,12 +218,94 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25A2AE9225ABD85006D847E /* LaunchScreen.storyboard in Resources */,
+				E25A2AFE225ADD70006D847E /* GoogleService-Info.plist in Resources */,
 				E25A2AE6225ABD85006D847E /* Assets.xcassets in Resources */,
 				E25A2AE4225ABD84006D847E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37992E55B7CD8601EE71E76F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tweeter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67CB138E9103FE1602803FCD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95B5606FFB90F7DF86F0B8FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E25A2AD7225ABD84006D847E /* Sources */ = {
@@ -348,6 +460,7 @@
 		};
 		E25A2AEE225ABD85006D847E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE12E4ABC3E8D6BFF03E5970 /* Pods-Tweeter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +479,7 @@
 		};
 		E25A2AEF225ABD85006D847E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC8A041EF00C22E9967384F1 /* Pods-Tweeter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
