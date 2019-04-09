@@ -9,6 +9,10 @@
 import Foundation
 
 struct Constant {
+  static let domain = "Tweeter"
+  static let overLongMessageErrorCode = 1
+  static let overLongMessageDescription = "Your message contains a span of non-whitespace characters longer than 50 characters."
+
   struct Alert {
     struct Title {
       static let error = "Error"

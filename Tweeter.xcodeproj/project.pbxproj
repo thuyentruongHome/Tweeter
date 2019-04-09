@@ -35,6 +35,8 @@
 		E25B9BBA225B7B1200E4BE8D /* CreateTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BB9225B7B1200E4BE8D /* CreateTweetViewController.swift */; };
 		E25B9BBC225B98F800E4BE8D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BBB225B98F800E4BE8D /* UIButton+Extension.swift */; };
 		E25B9BBE225BA61900E4BE8D /* TweetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BBD225BA61900E4BE8D /* TweetSpec.swift */; };
+		E2D8436D225C9EAA00CA6C7A /* SplitMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8436C225C9EAA00CA6C7A /* SplitMessage.swift */; };
+		E2D84370225CA0B600CA6C7A /* SplitMessageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8436F225CA0B600CA6C7A /* SplitMessageSpec.swift */; };
 		ECE60557555DC11E55022DEB /* Pods_Tweeter_Tests_TweeterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3699B6F1A36FE7FDA75531 /* Pods_Tweeter_Tests_TweeterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,8 @@
 		E25B9BB9225B7B1200E4BE8D /* CreateTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetViewController.swift; sourceTree = "<group>"; };
 		E25B9BBB225B98F800E4BE8D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E25B9BBD225BA61900E4BE8D /* TweetSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetSpec.swift; sourceTree = "<group>"; };
+		E2D8436C225C9EAA00CA6C7A /* SplitMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMessage.swift; sourceTree = "<group>"; };
+		E2D8436F225CA0B600CA6C7A /* SplitMessageSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMessageSpec.swift; sourceTree = "<group>"; };
 		EC8A041EF00C22E9967384F1 /* Pods-Tweeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +188,7 @@
 			children = (
 				E25A2B0C225AE5E8006D847E /* Constant.swift */,
 				E25A2AFF225ADFC5006D847E /* DatabaseKey.swift */,
+				E2D8436C225C9EAA00CA6C7A /* SplitMessage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			children = (
 				E25A2B1E225B058C006D847E /* Models */,
 				E25B9BB4225B430A00E4BE8D /* Extensions */,
+				E2D8436E225CA09900CA6C7A /* Helpers */,
 				E25A2B16225B03A6006D847E /* TweeterTests.swift */,
 				E25A2B18225B03A6006D847E /* Info.plist */,
 			);
@@ -280,6 +286,14 @@
 				E25B9BB5225B434900E4BE8D /* Date+ExtensionSpec.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2D8436E225CA09900CA6C7A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E2D8436F225CA0B600CA6C7A /* SplitMessageSpec.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,6 +577,7 @@
 				E25B9BBC225B98F800E4BE8D /* UIButton+Extension.swift in Sources */,
 				E25A2ADF225ABD84006D847E /* AppDelegate.swift in Sources */,
 				E25A2AFC225AD8D2006D847E /* User.swift in Sources */,
+				E2D8436D225C9EAA00CA6C7A /* SplitMessage.swift in Sources */,
 				E25A2B07225AE2D4006D847E /* Snapshot+Extension.swift in Sources */,
 				E25A2B09225AE2F7006D847E /* Date+Extension.swift in Sources */,
 				E25B9BB8225B600500E4BE8D /* String+Extension.swift in Sources */,
@@ -579,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25B9BB6225B434900E4BE8D /* Date+ExtensionSpec.swift in Sources */,
+				E2D84370225CA0B600CA6C7A /* SplitMessageSpec.swift in Sources */,
 				E25A2B17225B03A6006D847E /* TweeterTests.swift in Sources */,
 				E25B9BBE225BA61900E4BE8D /* TweetSpec.swift in Sources */,
 				E25A2B20225B05B0006D847E /* UserSpec.swift in Sources */,

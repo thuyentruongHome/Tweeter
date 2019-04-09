@@ -34,16 +34,29 @@ class CreateTweetViewController: UIViewController {
   @IBAction func sendTweet(_ sender: UIButton) {
     tweetMessageInput.resignFirstResponder()
     let tweetMessage = tweetMessageInput.text!
-    let tweet = Tweet(message: tweetMessage, user: User.current)
-    TweetService.shared.sendTweet(tweet) { [weak self] (error) in
-      guard let self = self else { return }
-      if let error = error {
-        DispatchQueue.main.async {
-          self.showInformedAlert(withTitle: Constant.Alert.Title.error, message: error.localizedDescription)
+    do {
+      let tweetMessageSplitParts = try splitMessage(tweetMessage)
+      let dispatchGroup = DispatchGroup()
+      tweetMessageSplitParts.forEach { (messagePart) in
+        let tweet = Tweet(message: messagePart, user: User.current)
+        dispatchGroup.enter()
+        TweetService.shared.sendTweet(tweet) { [weak self] (error) in
+          guard let self = self else { return }
+          if let error = error {
+            DispatchQueue.main.async {
+              self.showInformedAlert(withTitle: Constant.Alert.Title.error, message: error.localizedDescription)
+            }
+          } else {
+            dispatchGroup.leave()
+          }
         }
-        return
       }
-      self.dismiss(animated: true, completion: nil)
+
+      dispatchGroup.notify(queue: .main) {
+        self.dismiss(animated: true, completion: nil)
+      }
+    } catch let error {
+      showInformedAlert(withTitle: Constant.Alert.Title.error, message: error.localizedDescription)
     }
   }
 
