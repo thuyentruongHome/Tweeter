@@ -24,10 +24,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwC-5B-txT" userLabel="Menu Bar">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tweeter-symbol" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-FI-hXQ">
-                                                <rect key="frame" x="10" y="0.0" width="60" height="100"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tweeter-icon" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-FI-hXQ">
+                                                <rect key="frame" x="10" y="0.0" width="70" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="ABk-6O-Y1f"/>
+                                                    <constraint firstAttribute="width" constant="70" id="ABk-6O-Y1f"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-cc-MjN">
@@ -63,7 +63,7 @@
                                             <constraint firstItem="sGA-cc-MjN" firstAttribute="top" secondItem="rwC-5B-txT" secondAttribute="top" id="DDH-eM-nEd"/>
                                             <constraint firstAttribute="trailing" secondItem="sGA-cc-MjN" secondAttribute="trailing" constant="10" id="JA7-AQ-Hqz"/>
                                             <constraint firstItem="xfx-FI-hXQ" firstAttribute="leading" secondItem="rwC-5B-txT" secondAttribute="leading" constant="10" id="RjC-rd-4K0"/>
-                                            <constraint firstItem="sGA-cc-MjN" firstAttribute="leading" secondItem="xfx-FI-hXQ" secondAttribute="trailing" constant="30" id="lfv-7l-0Cv"/>
+                                            <constraint firstItem="sGA-cc-MjN" firstAttribute="leading" secondItem="xfx-FI-hXQ" secondAttribute="trailing" constant="20" id="lfv-7l-0Cv"/>
                                             <constraint firstAttribute="bottom" secondItem="xfx-FI-hXQ" secondAttribute="bottom" id="onU-6M-4MF"/>
                                             <constraint firstItem="xfx-FI-hXQ" firstAttribute="top" secondItem="rwC-5B-txT" secondAttribute="top" id="qWi-MY-Qf1"/>
                                             <constraint firstAttribute="height" constant="100" id="zSd-q7-0wk"/>
@@ -163,7 +163,7 @@
                                                 <rect key="frame" x="0.0" y="658" width="414" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWg-Dr-L0K">
-                                                        <rect key="frame" x="183" y="6" width="48" height="48"/>
+                                                        <rect key="frame" x="199" y="19" width="16" height="22"/>
                                                         <state key="normal" image="add"/>
                                                         <connections>
                                                             <segue destination="4h0-3D-Xv4" kind="presentation" id="B1R-T6-6V9"/>
@@ -344,6 +344,6 @@
     </scenes>
     <resources>
         <image name="add" width="48" height="48"/>
-        <image name="tweeter-symbol" width="80" height="80"/>
+        <image name="tweeter-icon" width="428" height="422"/>
     </resources>
 </document>
