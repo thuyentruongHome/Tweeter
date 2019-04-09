@@ -11,6 +11,7 @@ import Firebase
 
 protocol TweetServiceProtocol {
   func fetchTweets(completion: @escaping API.TweetsHandler)
+  func sendTweet(_ tweet: Tweet, completion: @escaping API.ErrorHandler)
 }
 
 struct TweetService: TweetServiceProtocol {
@@ -34,5 +35,18 @@ struct TweetService: TweetServiceProtocol {
           completion(nil, error)
         }
       })
+  }
+
+  func sendTweet(_ tweet: Tweet, completion: @escaping API.ErrorHandler) {
+    var tweet = tweet
+    tweet.tweetId = tweetsCollectionRef.document().documentID
+    do {
+      let data = try tweet.asDictionaryForNewTweet()
+      tweetsCollectionRef.addDocument(data: data) { (error) in
+        completion(error)
+      }
+    } catch let error {
+      completion(error)
+    }
   }
 }

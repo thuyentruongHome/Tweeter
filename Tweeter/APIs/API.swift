@@ -10,4 +10,5 @@ import Foundation
 
 struct API {
   typealias TweetsHandler = ([Tweet]?, Error?) -> Void
+  typealias ErrorHandler = (Error?) -> Void
 }

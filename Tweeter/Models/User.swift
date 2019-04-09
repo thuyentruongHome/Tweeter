@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct User: Decodable {
+struct User: Codable {
   let name: String
   var username: String
   let userAvatarUrl: String?

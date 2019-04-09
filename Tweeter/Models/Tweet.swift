@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Tweet: Decodable {
+struct Tweet: Codable {
   var tweetId: String?
   var message: String
   var user: User
@@ -18,5 +18,18 @@ struct Tweet: Decodable {
     case tweetId = "tweet_id"
     case message, user
     case createdAt = "created_at"
+  }
+
+  init(message: String, user: User) {
+    self.message = message
+    self.user = user
+    self.createdAt = Date()
+  }
+
+  func asDictionaryForNewTweet() throws -> [String: Any] {
+    let encodedData = try JSONEncoder().encode(self)
+    var data = try JSONSerialization.jsonObject(with: encodedData, options: []) as! [String: Any]
+    data[DatabaseKey.Tweet.createdAt] = Date()
+    return data
   }
 }

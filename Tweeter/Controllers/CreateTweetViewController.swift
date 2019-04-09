@@ -33,8 +33,18 @@ class CreateTweetViewController: UIViewController {
 
   @IBAction func sendTweet(_ sender: UIButton) {
     tweetMessageInput.resignFirstResponder()
-    // TODO: create Tweet
-    dismiss(animated: true, completion: nil)
+    let tweetMessage = tweetMessageInput.text!
+    let tweet = Tweet(message: tweetMessage, user: User.current)
+    TweetService.shared.sendTweet(tweet) { [weak self] (error) in
+      guard let self = self else { return }
+      if let error = error {
+        DispatchQueue.main.async {
+          self.showInformedAlert(withTitle: Constant.Alert.Title.error, message: error.localizedDescription)
+        }
+        return
+      }
+      self.dismiss(animated: true, completion: nil)
+    }
   }
 
   // MARK: - Setup Data
