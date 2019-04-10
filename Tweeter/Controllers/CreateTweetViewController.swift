@@ -15,6 +15,7 @@ class CreateTweetViewController: UIViewController {
   @IBOutlet weak var tweetMessageInput: UITextView!
   @IBOutlet weak var sendBtn: UIButton!
   @IBOutlet weak var bottomTextViewConstraint: NSLayoutConstraint!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
   weak var keyboardNotification: NSObjectProtocol?
 
@@ -33,6 +34,8 @@ class CreateTweetViewController: UIViewController {
 
   @IBAction func sendTweet(_ sender: UIButton) {
     tweetMessageInput.resignFirstResponder()
+    sendBtn.isEnabled = false
+    activityIndicator.startAnimating()
     let tweetMessage = tweetMessageInput.text!
     do {
       let tweetMessageSplitParts = try splitMessage(tweetMessage)
@@ -44,6 +47,7 @@ class CreateTweetViewController: UIViewController {
           guard let self = self else { return }
           if let error = error {
             DispatchQueue.main.async {
+              self.activityIndicator.stopAnimating()
               self.showInformedAlert(withTitle: Constant.Alert.Title.error, message: error.localizedDescription)
             }
           } else {
@@ -53,6 +57,7 @@ class CreateTweetViewController: UIViewController {
       }
 
       dispatchGroup.notify(queue: .main) {
+        self.activityIndicator.stopAnimating()
         self.dismiss(animated: true, completion: nil)
       }
     } catch let error {

@@ -13,6 +13,8 @@ class TweetsViewController: UIViewController {
   // MARK: - Properties
   @IBOutlet weak var tweetTableView: UITableView!
   @IBOutlet weak var newTweetNotify: UIButton!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var emptyTweetLabel: UILabel!
 
   let reuseIdentifier = "tweetCell"
   var tweets = [Tweet]()
@@ -27,6 +29,8 @@ class TweetsViewController: UIViewController {
     super.viewDidLoad()
 
     loadTweets()
+    tweetTableView.allowsSelection = false
+    TweetService.shared.delegate = self
   }
 
   // MARK: - Setup View Cycle
@@ -88,9 +92,10 @@ extension TweetsViewController: NewTweetHandlerProtocol {
 extension TweetsViewController {
   // loads Tweets data from server
   fileprivate func loadTweets() {
+    activityIndicator.startAnimating()
     TweetService.shared.fetchTweets { [weak self] (tweets, error) in
       guard let self = self else { return }
-
+      self.activityIndicator.stopAnimating()
       if let error = error {
         DispatchQueue.main.async {
           self.showInformedAlert(withTitle: Constant.Alert.Title.error, message: error.localizedDescription)
@@ -98,10 +103,11 @@ extension TweetsViewController {
         return
       }
 
-      if let tweets = tweets {
+      if let tweets = tweets, tweets.count > 0 {
         self.tweets = tweets
         self.tweetTableView.reloadData()
-        TweetService.shared.delegate = self
+      } else {
+        self.emptyTweetLabel.isHidden = false
       }
     }
   }
@@ -126,6 +132,7 @@ extension TweetsViewController {
   // inserts new tweets on the top of tweets tableView
   fileprivate func loadNewTweets() {
     newTweetNotify.isHidden = true
+    emptyTweetLabel.isHidden = true
     guard newTweets.count > 0 else { return }
     let newTweetsCopy = newTweets; newTweets.removeAll()
     tweets = newTweetsCopy + tweets

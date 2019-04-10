@@ -159,6 +159,16 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uwl-yi-3no"/>
                                                 </connections>
                                             </tableView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no tweets yet!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zx-QS-Pub">
+                                                <rect key="frame" x="103" y="296" width="208" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="l03-hd-0NX">
+                                                <rect key="frame" x="188.5" y="240.5" width="37" height="37"/>
+                                                <color key="color" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-v8-Ee6">
                                                 <rect key="frame" x="147" y="50" width="120" height="35"/>
                                                 <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -202,10 +212,14 @@
                                         <constraints>
                                             <constraint firstItem="2G4-RB-s4K" firstAttribute="leading" secondItem="i0I-UO-EBW" secondAttribute="leading" id="0eV-x9-z2z"/>
                                             <constraint firstItem="Ykp-Md-aCx" firstAttribute="leading" secondItem="i0I-UO-EBW" secondAttribute="leading" id="CDz-g4-u1e"/>
+                                            <constraint firstItem="1zx-QS-Pub" firstAttribute="top" secondItem="Ykp-Md-aCx" secondAttribute="bottom" multiplier="0.45" id="Fv8-cr-KnU"/>
+                                            <constraint firstItem="l03-hd-0NX" firstAttribute="centerX" secondItem="i0I-UO-EBW" secondAttribute="centerX" id="GF4-rV-jqX"/>
                                             <constraint firstAttribute="bottom" secondItem="2G4-RB-s4K" secondAttribute="bottom" id="PZ0-uz-BvE"/>
                                             <constraint firstAttribute="trailing" secondItem="Ykp-Md-aCx" secondAttribute="trailing" id="Wm4-b2-JyZ"/>
+                                            <constraint firstItem="1zx-QS-Pub" firstAttribute="centerX" secondItem="i0I-UO-EBW" secondAttribute="centerX" id="Xw7-ii-x0y"/>
                                             <constraint firstItem="2G4-RB-s4K" firstAttribute="top" secondItem="Ykp-Md-aCx" secondAttribute="bottom" id="dpS-RA-Sle"/>
                                             <constraint firstItem="HaF-v8-Ee6" firstAttribute="centerX" secondItem="i0I-UO-EBW" secondAttribute="centerX" id="fwd-rM-ORf"/>
+                                            <constraint firstItem="l03-hd-0NX" firstAttribute="centerY" secondItem="i0I-UO-EBW" secondAttribute="centerY" constant="-100" id="j0U-Wo-vM5"/>
                                             <constraint firstItem="HaF-v8-Ee6" firstAttribute="top" secondItem="Ykp-Md-aCx" secondAttribute="top" constant="50" id="k62-MW-d9w"/>
                                             <constraint firstAttribute="trailing" secondItem="2G4-RB-s4K" secondAttribute="trailing" id="kZ0-9b-188"/>
                                             <constraint firstItem="Ykp-Md-aCx" firstAttribute="top" secondItem="i0I-UO-EBW" secondAttribute="top" id="uZX-Jd-qi0"/>
@@ -234,6 +248,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="l03-hd-0NX" id="ub4-LC-S8a"/>
+                        <outlet property="emptyTweetLabel" destination="1zx-QS-Pub" id="i4r-wK-Na4"/>
                         <outlet property="newTweetNotify" destination="HaF-v8-Ee6" id="tkm-dP-ZRj"/>
                         <outlet property="tweetTableView" destination="Ykp-Md-aCx" id="aUo-2S-JNE"/>
                     </connections>
@@ -331,6 +347,10 @@
                                             <constraint firstItem="kWS-k1-ucZ" firstAttribute="leading" secondItem="GfO-rw-Wc7" secondAttribute="leading" id="u9S-o3-ixd"/>
                                         </constraints>
                                     </view>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OpW-KY-OFP">
+                                        <rect key="frame" x="168.5" y="140" width="37" height="37"/>
+                                        <color key="color" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -338,9 +358,11 @@
                                     <constraint firstAttribute="bottom" secondItem="GfO-rw-Wc7" secondAttribute="bottom" id="7vj-bN-cwy"/>
                                     <constraint firstItem="7sO-fr-YMr" firstAttribute="leading" secondItem="oHw-d8-Z7n" secondAttribute="leading" id="B78-8U-x3U"/>
                                     <constraint firstItem="GfO-rw-Wc7" firstAttribute="leading" secondItem="7sO-fr-YMr" secondAttribute="leading" id="I3b-Gu-yRO"/>
+                                    <constraint firstItem="OpW-KY-OFP" firstAttribute="centerX" secondItem="oHw-d8-Z7n" secondAttribute="centerX" id="eXh-Fm-46I"/>
                                     <constraint firstItem="GfO-rw-Wc7" firstAttribute="top" secondItem="7sO-fr-YMr" secondAttribute="bottom" id="jVT-c0-qma"/>
                                     <constraint firstAttribute="trailing" secondItem="7sO-fr-YMr" secondAttribute="trailing" id="ofM-QU-NVL"/>
                                     <constraint firstItem="GfO-rw-Wc7" firstAttribute="trailing" secondItem="7sO-fr-YMr" secondAttribute="trailing" id="sIr-4X-DVh"/>
+                                    <constraint firstItem="jsi-vc-JVH" firstAttribute="top" secondItem="OpW-KY-OFP" secondAttribute="top" multiplier="0.5" id="vjB-bl-oze"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -354,6 +376,7 @@
                         <viewLayoutGuide key="safeArea" id="4Hf-CP-aar"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="OpW-KY-OFP" id="IYg-Wb-udc"/>
                         <outlet property="bottomTextViewConstraint" destination="oN1-zv-gsa" id="uvN-Yt-SdH"/>
                         <outlet property="sendBtn" destination="ySV-Y9-ckn" id="eAH-J2-VXD"/>
                         <outlet property="tweetMessageInput" destination="jsi-vc-JVH" id="Ats-7S-YBw"/>
