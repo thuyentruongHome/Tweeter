@@ -25,7 +25,6 @@
 		E25A2B0B225AE5AA006D847E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2B0A225AE5AA006D847E /* UIViewController+Extension.swift */; };
 		E25A2B0D225AE5E8006D847E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2B0C225AE5E8006D847E /* Constant.swift */; };
 		E25A2B0F225AEF3A006D847E /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2B0E225AEF3A006D847E /* DateFormatter+Extension.swift */; };
-		E25A2B17225B03A6006D847E /* TweeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2B16225B03A6006D847E /* TweeterTests.swift */; };
 		E25A2B20225B05B0006D847E /* UserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A2B1F225B05B0006D847E /* UserSpec.swift */; };
 		E25A2B2A225B0D0A006D847E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A2B29225B0D0A006D847E /* Quick.framework */; };
 		E25A2B2C225B0D0F006D847E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A2B2B225B0D0F006D847E /* Nimble.framework */; };
@@ -76,7 +75,6 @@
 		E25A2B0C225AE5E8006D847E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E25A2B0E225AEF3A006D847E /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		E25A2B14225B03A6006D847E /* TweeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E25A2B16225B03A6006D847E /* TweeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweeterTests.swift; sourceTree = "<group>"; };
 		E25A2B18225B03A6006D847E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E25A2B1F225B05B0006D847E /* UserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpec.swift; sourceTree = "<group>"; };
 		E25A2B21225B072D006D847E /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,7 +263,6 @@
 				E25A2B1E225B058C006D847E /* Models */,
 				E25B9BB4225B430A00E4BE8D /* Extensions */,
 				E2D8436E225CA09900CA6C7A /* Helpers */,
-				E25A2B16225B03A6006D847E /* TweeterTests.swift */,
 				E25A2B18225B03A6006D847E /* Info.plist */,
 			);
 			path = TweeterTests;
@@ -595,7 +592,6 @@
 			files = (
 				E25B9BB6225B434900E4BE8D /* Date+ExtensionSpec.swift in Sources */,
 				E2D84370225CA0B600CA6C7A /* SplitMessageSpec.swift in Sources */,
-				E25A2B17225B03A6006D847E /* TweeterTests.swift in Sources */,
 				E25B9BBE225BA61900E4BE8D /* TweetSpec.swift in Sources */,
 				E25A2B20225B05B0006D847E /* UserSpec.swift in Sources */,
 			);

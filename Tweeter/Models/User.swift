@@ -11,11 +11,11 @@ import UIKit
 struct User: Codable {
   let name: String
   var username: String
-  let userAvatarUrl: String?
+  let userAvatarUrl: String
 
   // For Sample purpose, replace when implemening authentication
   static let current: User = {
-    return User(name: "Abigail", username: "abigail.io", userAvatarUrl: nil)
+    return User(name: "Tazanna", username: "tazanna.net", userAvatarUrl: "tazanna")
   }()
 
   func displayName() -> String {
@@ -23,6 +23,6 @@ struct User: Codable {
   }
 
   func avatarImage() -> UIImage {
-    return UIImage(named: username.lowercased()) ?? UIImage(named: Constant.User.defaultAvatar)!
+    return UIImage(named: userAvatarUrl) ?? UIImage(named: Constant.User.defaultAvatar)!
   }
 }

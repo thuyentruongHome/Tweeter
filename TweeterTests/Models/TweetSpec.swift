@@ -19,9 +19,7 @@ class TweetSpec: QuickSpec {
 
     var tweet: Tweet!
     let message = Faker().lorem.sentences()
-    let name = Faker().name.name()
-    let username = Faker().internet.username()
-    let user = User(name: name, username: username, userAvatarUrl: nil)
+    let user = User(name: Faker().name.name(), username: Faker().internet.username(), userAvatarUrl: Faker().lorem.word())
     tweet = Tweet(message: message, user: user)
 
     describe(".asDictionaryForNewTweet") {

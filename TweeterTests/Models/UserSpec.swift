@@ -19,16 +19,18 @@ class UserSpec: QuickSpec {
 
     var name: String!
     var username: String!
+    var userAvatarUrl: String!
     var _user: User?
     var user: User {
       guard _user == nil else { return _user! }
-      _user = User(name: name, username: username, userAvatarUrl: nil)
+      _user = User(name: name, username: username, userAvatarUrl: userAvatarUrl)
       return _user!
     }
 
     beforeEach {
       name = Faker().name.name()
       username = Faker().internet.username()
+      userAvatarUrl = Faker().lorem.word()
     }
 
     afterEach {
@@ -44,11 +46,11 @@ class UserSpec: QuickSpec {
     describe(".avatarImage()") {
       context("exists UIImage with username as image name") {
         beforeEach {
-          username = "tazanna"
+          userAvatarUrl = "tazanna"
         }
 
         it("returns user image") {
-          expect(user.avatarImage()) == UIImage(named: username!)
+          expect(user.avatarImage()) == UIImage(named: userAvatarUrl!)
         }
       }
 
