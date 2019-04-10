@@ -28,6 +28,16 @@ class CreateTweetViewController: UIViewController {
 
   // MARK: - Handlers
   @IBAction func cancelCreateTweet(_ sender: UIButton) {
+    if tweetMessageInput.text! == "" {
+      cancelCreateTweet()
+    } else {
+      showConfirmationAlert(withTitle: Constant.Alert.Title.cancelCreateTweetConfirm, message: Constant.Alert.Message.cancelCreateTweetMessage) {
+        self.cancelCreateTweet()
+      }
+    }
+  }
+
+  fileprivate func cancelCreateTweet() {
     tweetMessageInput.resignFirstResponder()
     dismiss(animated: true, completion: nil)
   }

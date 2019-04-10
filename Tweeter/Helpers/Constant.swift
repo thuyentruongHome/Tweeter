@@ -16,10 +16,17 @@ struct Constant {
   struct Alert {
     struct Title {
       static let error = "Error"
+      static let cancelCreateTweetConfirm = "You haven't sent your tweet."
     }
 
     struct Action {
+      static let delete = "Delete"
+      static let cancel = "Cancel"
       static let ok = "OK"
+    }
+
+    struct Message {
+      static let cancelCreateTweetMessage = "Are you sure you want to delete your draft tweet?"
     }
   }
 
