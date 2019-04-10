@@ -28,6 +28,20 @@ extension UIButton {
       }
     }
   }
+
+  // MARK: - Animation for UIButton
+  func pulsate() {
+    let pulse = CASpringAnimation(keyPath: "transform.scale")
+    pulse.duration = 0.3
+    pulse.fromValue = 0.95
+    pulse.toValue = 1.05
+    pulse.autoreverses = true
+    pulse.repeatCount = 2
+    pulse.initialVelocity = 0.5
+    pulse.damping = 1.0
+
+    layer.add(pulse, forKey: nil)
+  }
 }
 
 // Reference: Create Background Image from Color:  https://spin.atomicobject.com/2018/04/25/uibutton-background-color/?fbclid=IwAR0tIN1uMyA8A7bcG_fdn5DL8mZElJ-0nKIi-L8HWvBBbED5eZ7rqQuN_qI

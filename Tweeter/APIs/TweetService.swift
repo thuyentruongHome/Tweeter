@@ -12,12 +12,19 @@ import Firebase
 protocol TweetServiceProtocol {
   func fetchTweets(completion: @escaping API.TweetsHandler)
   func sendTweet(_ tweet: Tweet, completion: @escaping API.ErrorHandler)
+  func setObserverNewTweets(with newTweetMockTime: Date)
 }
 
-struct TweetService: TweetServiceProtocol {
+protocol NewTweetHandlerProtocol {
+  func handleNewTweets(_ tweets: [Tweet])
+}
+
+class TweetService: TweetServiceProtocol {
 
   static let shared = TweetService()
   var tweetsCollectionRef: CollectionReference!
+  var currentListener: ListenerRegistration?
+  var delegate: NewTweetHandlerProtocol?
 
   init() {
     tweetsCollectionRef = Firestore.firestore().collection(DatabaseKey.Tweet.collectionName)
@@ -48,5 +55,21 @@ struct TweetService: TweetServiceProtocol {
     } catch let error {
       completion(error)
     }
+  }
+
+  func setObserverNewTweets(with newTweetMockTime: Date) {
+    currentListener?.remove()
+    currentListener = tweetsCollectionRef
+      .whereField(DatabaseKey.Tweet.createdAt, isGreaterThan: newTweetMockTime)
+      .order(by: DatabaseKey.Tweet.createdAt)
+      .addSnapshotListener { [weak self] (snapshot, _) in
+        do {
+          if let tweets: [Tweet] = try snapshot?.decoded(), tweets.count > 0 {
+            self?.delegate?.handleNewTweets(tweets)
+          }
+        } catch let error {
+          print(error.localizedDescription)
+        }
+      }
   }
 }

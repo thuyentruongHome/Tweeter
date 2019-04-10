@@ -159,6 +159,26 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uwl-yi-3no"/>
                                                 </connections>
                                             </tableView>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-v8-Ee6">
+                                                <rect key="frame" x="147" y="50" width="120" height="35"/>
+                                                <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="8o9-Ia-JOg"/>
+                                                    <constraint firstAttribute="height" constant="35" id="A3X-C1-ejw"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="new Tweet" image="up-arrow">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickNewTweetNotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6e9-jA-CHa"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2G4-RB-s4K" userLabel="Add Tweet View">
                                                 <rect key="frame" x="0.0" y="658" width="414" height="60"/>
                                                 <subviews>
@@ -185,6 +205,8 @@
                                             <constraint firstAttribute="bottom" secondItem="2G4-RB-s4K" secondAttribute="bottom" id="PZ0-uz-BvE"/>
                                             <constraint firstAttribute="trailing" secondItem="Ykp-Md-aCx" secondAttribute="trailing" id="Wm4-b2-JyZ"/>
                                             <constraint firstItem="2G4-RB-s4K" firstAttribute="top" secondItem="Ykp-Md-aCx" secondAttribute="bottom" id="dpS-RA-Sle"/>
+                                            <constraint firstItem="HaF-v8-Ee6" firstAttribute="centerX" secondItem="i0I-UO-EBW" secondAttribute="centerX" id="fwd-rM-ORf"/>
+                                            <constraint firstItem="HaF-v8-Ee6" firstAttribute="top" secondItem="Ykp-Md-aCx" secondAttribute="top" constant="50" id="k62-MW-d9w"/>
                                             <constraint firstAttribute="trailing" secondItem="2G4-RB-s4K" secondAttribute="trailing" id="kZ0-9b-188"/>
                                             <constraint firstItem="Ykp-Md-aCx" firstAttribute="top" secondItem="i0I-UO-EBW" secondAttribute="top" id="uZX-Jd-qi0"/>
                                         </constraints>
@@ -212,6 +234,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="newTweetNotify" destination="HaF-v8-Ee6" id="tkm-dP-ZRj"/>
                         <outlet property="tweetTableView" destination="Ykp-Md-aCx" id="aUo-2S-JNE"/>
                     </connections>
                 </viewController>
@@ -345,5 +368,6 @@
     <resources>
         <image name="add" width="48" height="48"/>
         <image name="tweeter-icon" width="428" height="422"/>
+        <image name="up-arrow" width="20" height="20"/>
     </resources>
 </document>
