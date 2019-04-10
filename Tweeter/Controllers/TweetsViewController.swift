@@ -16,6 +16,13 @@ class TweetsViewController: UIViewController {
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var emptyTweetLabel: UILabel!
 
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+    refreshControl.tintColor = UIColor.mainColor
+    return refreshControl
+  }()
+
   let reuseIdentifier = "tweetCell"
   var tweets = [Tweet]()
   private var newTweets = [Tweet]()
@@ -29,8 +36,14 @@ class TweetsViewController: UIViewController {
     super.viewDidLoad()
 
     loadTweets()
-    tweetTableView.allowsSelection = false
+    configTweetTableView()
     TweetService.shared.delegate = self
+  }
+
+  // MARK: - Handlers
+  @objc func handleRefresh() {
+    loadTweets()
+    refreshControl.endRefreshing()
   }
 
   // MARK: - Setup View Cycle
@@ -46,7 +59,7 @@ class TweetsViewController: UIViewController {
   }
 }
 
-//MARK: - UITableViewDataSource, UITableViewDelegate
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension TweetsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tweets.count
@@ -75,7 +88,7 @@ extension TweetsViewController: UITableViewDataSource, UITableViewDelegate {
   }
 }
 
-//MARK: - NewTweetHandlerProtocol
+// MARK: - NewTweetHandlerProtocol
 extension TweetsViewController: NewTweetHandlerProtocol {
   func handleNewTweets(_ tweets: [Tweet]) {
     tweets.forEach { (tweet) in
@@ -92,7 +105,9 @@ extension TweetsViewController: NewTweetHandlerProtocol {
 extension TweetsViewController {
   // loads Tweets data from server
   fileprivate func loadTweets() {
-    activityIndicator.startAnimating()
+    if !refreshControl.isRefreshing {
+      activityIndicator.startAnimating()
+    }
     TweetService.shared.fetchTweets { [weak self] (tweets, error) in
       guard let self = self else { return }
       self.activityIndicator.stopAnimating()
@@ -103,11 +118,10 @@ extension TweetsViewController {
         return
       }
 
-      if let tweets = tweets, tweets.count > 0 {
+      if let tweets = tweets {
         self.tweets = tweets
         self.tweetTableView.reloadData()
-      } else {
-        self.emptyTweetLabel.isHidden = false
+        self.emptyTweetLabel.isHidden = tweets.count != 0
       }
     }
   }
@@ -132,11 +146,19 @@ extension TweetsViewController {
   // inserts new tweets on the top of tweets tableView
   fileprivate func loadNewTweets() {
     newTweetNotify.isHidden = true
-    emptyTweetLabel.isHidden = true
     guard newTweets.count > 0 else { return }
+    emptyTweetLabel.isHidden = true
     let newTweetsCopy = newTweets; newTweets.removeAll()
     tweets = newTweetsCopy + tweets
     let newIndexPaths = (0..<newTweetsCopy.count).map({ IndexPath(row: $0, section: 0)})
     tweetTableView.insertRows(at: newIndexPaths, with: .fade)
+  }
+}
+
+// MARK: - Setup UI Components
+extension TweetsViewController {
+  func configTweetTableView() {
+    tweetTableView.allowsSelection = false
+    tweetTableView.addSubview(refreshControl)
   }
 }

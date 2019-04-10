@@ -36,6 +36,7 @@
 		E25B9BBE225BA61900E4BE8D /* TweetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B9BBD225BA61900E4BE8D /* TweetSpec.swift */; };
 		E2D8436D225C9EAA00CA6C7A /* SplitMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8436C225C9EAA00CA6C7A /* SplitMessage.swift */; };
 		E2D84370225CA0B600CA6C7A /* SplitMessageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8436F225CA0B600CA6C7A /* SplitMessageSpec.swift */; };
+		E2FE4A57225D974200799804 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE4A56225D974200799804 /* UIColor+Extension.swift */; };
 		ECE60557555DC11E55022DEB /* Pods_Tweeter_Tests_TweeterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3699B6F1A36FE7FDA75531 /* Pods_Tweeter_Tests_TweeterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		E25B9BBD225BA61900E4BE8D /* TweetSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetSpec.swift; sourceTree = "<group>"; };
 		E2D8436C225C9EAA00CA6C7A /* SplitMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMessage.swift; sourceTree = "<group>"; };
 		E2D8436F225CA0B600CA6C7A /* SplitMessageSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMessageSpec.swift; sourceTree = "<group>"; };
+		E2FE4A56225D974200799804 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		EC8A041EF00C22E9967384F1 /* Pods-Tweeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweeter/Pods-Tweeter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				E25B9BB7225B600500E4BE8D /* String+Extension.swift */,
 				E25A2B0A225AE5AA006D847E /* UIViewController+Extension.swift */,
 				E25B9BBB225B98F800E4BE8D /* UIButton+Extension.swift */,
+				E2FE4A56225D974200799804 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				E25A2AF8225AD83F006D847E /* TweetCell.swift in Sources */,
 				E25B9BBA225B7B1200E4BE8D /* CreateTweetViewController.swift in Sources */,
 				E25A2B0F225AEF3A006D847E /* DateFormatter+Extension.swift in Sources */,
+				E2FE4A57225D974200799804 /* UIColor+Extension.swift in Sources */,
 				E25A2B0B225AE5AA006D847E /* UIViewController+Extension.swift in Sources */,
 				E25A2AE1225ABD84006D847E /* TweetsViewController.swift in Sources */,
 				E25B9BBC225B98F800E4BE8D /* UIButton+Extension.swift in Sources */,

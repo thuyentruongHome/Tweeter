@@ -52,7 +52,7 @@ func splitMessage(_ text: String, charLimit: Int = defaultCharLimit) throws -> [
   var textResults: [NSTextCheckingResult]!
   repeat {
     support.numberOfPartsLength = numberOfPartsLength
-    textResults = support.regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf8.count))
+    textResults = support.regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.count))
     numberOfParts = textResults.count
     numberOfPartsLength = String(numberOfParts).count
   } while numberOfPartsLength != support.numberOfPartsLength

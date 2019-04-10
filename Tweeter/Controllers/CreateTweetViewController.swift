@@ -71,6 +71,7 @@ class CreateTweetViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
       }
     } catch let error {
+      activityIndicator.stopAnimating()
       showInformedAlert(withTitle: Constant.Alert.Title.error, message: error.localizedDescription)
     }
   }
